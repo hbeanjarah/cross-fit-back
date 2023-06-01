@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "cross-fit-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hbeanjarah/cross-fit-back.git",
+  "author": "hbeanjarah <hbeanjarahoussen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
