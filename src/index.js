@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import workoutRoutes from "./v1/routes/workouts/workoutRoutes.js";
 const app = express();
 
@@ -8,6 +9,7 @@ app.get("/", (req, res) => {
   res.send("<h2>It's working</h2>");
 });
 
+app.use(bodyParser.json());
 app.use("/api/v1/workouts", workoutRoutes);
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
