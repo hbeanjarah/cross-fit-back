@@ -6,13 +6,21 @@ import {
   updateWorkout,
   deleteWorkout,
 } from "../../../controllers/workouts/workoutController.js";
+
+import { validationWorkout } from "../../../validations/workout.validation.js";
+
 const router = express.Router();
 
 router.get("/", getWorkouts);
 
 router.get("/:workoutId", getWorkoutById);
 
-router.post("/", createWorkout);
+router.post(
+  "/",
+  validationWorkout.workoutValidationRules(),
+  validationWorkout.validateWorkout,
+  createWorkout
+);
 
 router.patch("/:workoutId", updateWorkout);
 
